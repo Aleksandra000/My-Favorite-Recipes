@@ -3,47 +3,39 @@ import {HashRouter as Router, Switch,Route,NavLink} from "react-router-dom";
 import './App.scss';
 import Main from "./components/Main";
 import Recipes from "./components/Recipes";
-import Favourites from "./components/Favourites";
+import Favorites from "./components/Favorites";
+import Contact from "./components/Contact";
+import Articles from "./components/Articles";
+import NotFound from "./components/NotFound";
 
 const Navigation = ()=>(
-    <nav>
-      <ul>
-        <li><NavLink activeStyle={{fontWeight: "bold"}} exact to="/" >Home</NavLink></li>
-        <li><NavLink activeStyle={{fontWeight: "bold"}} to="/recipes/">Przepisy</NavLink></li>
-        <li><NavLink activeStyle={{fontWeight: "bold"}} to="/favourites">Ulubione</NavLink></li>
+    <nav className="NavMenu">
+        <header className="NavHeader">My Favorite Recipes</header>
+      <ul className="NavUl">
+        <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} exact to="/" >Home</NavLink></li>
+        <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/recipes/">Recipes</NavLink></li>
+        <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/favorites">Favorites</NavLink></li>
+        <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/articles">Articles</NavLink></li>
+        <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/contact">Contact</NavLink></li>
       </ul>
     </nav>
 );
 
-class App extends Component {
+class App extends React.Component {
+    constructor(props) {
+        super(props);
 
-//
-// constructor(props){
-//         super(props);
-//         this.state = {
-//             recipes: []
-//         };
-//         console.log(this.state.recipes);
-//     }
-//
-//     componentDidMount() {
-//         fetch("https://api.edamam.com/search?app_id=adc033bb&app_key=fc993cc15fd9f03e3804ba73c5ade9b3&q=chicken,paprika")
-//             .then(res => res.json())
-//             .then(json => this.setState({ recipes: json.hits }));
-//
-//         //     .then(response=>{
-//         //         if(response.ok){
-//         //             return response.json();
-//         //         }else{
-//         //             throw new Error("error, nie wyszło..");
-//         //         }
-//         //     })
-//         //     .then(json => this.setState({
-//         //     recipes:[...json.q]
-//         // }));
-//         console.log(this.recipes);
-//     }
+        this.state = {
+            recipes:[],
+            favorites: []
+        };
+    }
+    handleAddToFavorite = (recipe)=> {
+        this.setState((prevState) => ({
+            favourites: [...prevState, recipe],
+        }))
 
+    };
   render() {
     return (
         <div>
@@ -52,7 +44,11 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/recipes/" component={Recipes} />
-              <Route path="/favourites/" component={Favourites} />
+              <Route path="/favorites/" component={Favorites} />
+              {/*<Route exact path="/favorite" render={props => <Favorites {...props} list={this.state.favorites}/>}/>*/}
+              <Route path="/articles/" component={Articles} />
+              <Route path="/contact/" component={Contact} />
+               <Route component={NotFound}/>
             </Switch>
           </Router>
         </div>
