@@ -2,16 +2,24 @@ import React, {Component} from 'react';
 
 
 class Favorites extends Component {
-    componentDidMount() {
-        const favorites = localStorage.getItem('favorites') === 'true';
 
-        this.setState({favorites});
+    state = {
+        favorites:[]
+    };
+
+
+    componentDidMount() {
+        // const favorites = favorites ? localStorage.getItem('favorites') : '';
+        // this.setState({ favorites});
     }
 
     render() {
         return (
             <div>
-                <h1> Favorite recipes</h1>
+                {/*<h1> Favorite recipes</h1>*/}
+
+                <p>{this.state.user}</p>
+
                 {/*<div >*/}
                 {/*    {*/}
                 {/*        favorites.map(*/}

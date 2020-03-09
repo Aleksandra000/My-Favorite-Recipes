@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Switch,Route,NavLink} from "react-router-dom";
 import './App.scss';
+
 import Main from "./components/Main";
 import Recipes from "./components/Recipes";
 import Favorites from "./components/Favorites";
@@ -38,7 +39,7 @@ class App extends React.Component {
     };
   render() {
     return (
-        <div>
+        <div class="container">
           <Router>
             <Navigation />
             <Switch>
