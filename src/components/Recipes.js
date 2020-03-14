@@ -30,7 +30,8 @@ class Recipes extends Component {
     getRecipe = (e) => {
         e.preventDefault();
         this.setState({
-            ingeredient:[...this.state.ingeredient,e.target.value]
+            ingeredient:[...this.state.ingeredient,e.target.value],
+            checkboxChecked: !this.state.checkboxChecked
         });
     };
 
@@ -51,14 +52,13 @@ class Recipes extends Component {
 
     delete = () => {
         this.setState({
-            checked: false,
             ingeredient:[]
         });
     };
 
     changeBox = e => {
         this.setState({
-            checkboxChecked: !this.state.checkboxChecked
+            checkboxChecked: true
         });
     };
 
@@ -82,15 +82,35 @@ class Recipes extends Component {
                     <div className="row">
                         <div className="col-sm">
                             <div>
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="apple"
+                                       value="apple" checked={this.state.checkboxChecked}
+                                       onChange={this.getRecipe}/>
+                                <label htmlFor="apple"> apple</label>
+                            </div>
+                            <div>
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="bean" value="bean"
                                        checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
                                 <label htmlFor="bean"> bean</label>
+                            </div>
+                            <div>
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="beetroot"
+                                       value="beetroot" checked={this.state.checkboxChecked}
+                                       onChange={this.getRecipe}/>
+                                <label htmlFor="beetroot"> beetroot</label>
                             </div>
                             <div>
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="butter"
                                        value="butter" checked={this.state.checkboxChecked}
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="butter"> butter</label>
+                            </div>
+                        </div>
+                        <div className="col-sm">
+                            <div>
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="carrot"
+                                       value="carrot" checked={this.state.checkboxChecked}
+                                       onChange={this.getRecipe}/>
+                                <label htmlFor="carrot"> carrot</label>
                             </div>
                             <div>
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="cheese"
@@ -104,6 +124,11 @@ class Recipes extends Component {
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="chicken"> chicken</label>
                             </div>
+                            <div>
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="coconut" value="coconut"
+                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <label htmlFor="coconut"> coconut</label>
+                            </div>
                         </div>
                         <div className="col-sm">
                             <div>
@@ -116,6 +141,11 @@ class Recipes extends Component {
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="egg" value="egg"
                                        checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
                                 <label htmlFor="egg"> egg</label>
+                            </div>
+                            <div>
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="fish" value="fish"
+                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <label htmlFor="fish"> fish</label>
                             </div>
                             <div>
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="milk" value="milk"
@@ -138,13 +168,13 @@ class Recipes extends Component {
                                 <input onClick={e => this.changeBox(e)} type="checkbox" id="potatoes"
                                        value="potatoes" checked={this.state.checkboxChecked}
                                        onChange={this.getRecipe}/>
-                                <label htmlFor="potatoes"> potatoes</label>
+                                <label htmlFor="potatoes"> potato</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="tomatoe"
-                                       value="tomatoe" checked={this.state.checkboxChecked}
+                                <input onClick={e => this.changeBox(e)} type="checkbox" id="tomato"
+                                       value="tomato" checked={this.state.checkboxChecked}
                                        onChange={this.getRecipe}/>
-                                <label htmlFor="tomatoe"> tomatoe</label>
+                                <label htmlFor="tomato"> tomato</label>
                             </div>
                         </div>
                     </div>
