@@ -7,6 +7,7 @@ import Recipes from "./components/Recipes";
 import Favorites from "./components/Favorites";
 import Contact from "./components/Contact";
 import Articles from "./components/Articles";
+import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
 const Navigation = ()=>(
@@ -39,19 +40,25 @@ class App extends React.Component {
     };
   render() {
     return (
-        <div class="container">
+        <div className="container" >
+
           <Router>
             <Navigation />
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <Route path="/recipes/" component={Recipes} />
-              <Route path="/favorites/" component={Favorites} />
-              {/*<Route exact path="/favorite" render={props => <Favorites {...props} list={this.state.favorites}/>}/>*/}
-              <Route path="/articles/" component={Articles} />
-              <Route path="/contact/" component={Contact} />
-               <Route component={NotFound}/>
-            </Switch>
+
+              <div className="background1" >
+                <Switch>
+                  <Route exact path="/" component={Main} />
+                  <Route path="/recipes/" component={Recipes} />
+                  <Route path="/favorites/" component={Favorites} />
+                  <Route path="/articles/" component={Articles} />
+                  <Route path="/contact/" component={Contact} />
+                  <Route component={NotFound}/>
+                </Switch>
+              </div>
+
+              <Footer></Footer>
           </Router>
+
         </div>
     );
   }
