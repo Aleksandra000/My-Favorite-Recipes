@@ -138,13 +138,21 @@ li{
   width: 30%;
 }
 .checkbox-form{
-  display: inline;
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
 
 }
 label{
-  display: inline;
+  //display: inline;
   padding-right: 50px;
+}
+
+.row{
+  position: relative;
+}
+.right-side{
+  position: absolute;
+  left:85%
 }
 ////////////////////////////////////Footer///////////////////////////////////////////////
 .footer{
