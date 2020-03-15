@@ -5,7 +5,7 @@ class Articles extends Component{
         return (
             <div className="background">
                 <article>
-                    <div className="row recipes">
+                    <div className=" recipes">
                         <div className="col-recipe-t">
                             <img className="imgArt" src="./image/tart.jpg" alt="lemon tart"/>
                         </div>
@@ -16,7 +16,7 @@ class Articles extends Component{
                     </div>
                 </article>
                 <article>
-                    <div className="row recipes">
+                    <div className=" recipes">
                         <div className="col-recipe-t">
                             <img className="imgArt" src="./image/plate.jpg" alt="eastern dishes"/>
                         </div>
@@ -28,7 +28,7 @@ class Articles extends Component{
                 </article>
 
                 <article>
-                    <div className="row recipes">
+                    <div className=" recipes">
                         <div className="col-recipe-t">
                             <img className="imgArt" src="./image/ramen.jpg" alt="vietnamese-bun-cha"/>
                         </div>

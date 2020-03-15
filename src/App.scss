@@ -77,7 +77,7 @@ button{
   font-size: 50px;
 }
 .Nav{
-  color: black;
+  color: #282c34;
   font-weight: 600;
 }
 .NavUl{
@@ -122,17 +122,25 @@ a{
 ////////////////////////////////////Recipes///////////////////////////////////////////////
 .recipes{
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 
 }
 .imgArt{
-  height: 200px;
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 li{
   list-style: none;
 }
 .col-recipe-w{
-  width: 70%;
+  width: 60%;
   padding-left: 50px;
+  margin-left: 20px;
 }
 .col-recipe-t{
   width: 30%;
@@ -154,6 +162,9 @@ label{
   position: absolute;
   left:85%
 }
+.bbb{
+  position: absolute;
+}
 
 ////////////////////////////////////Footer///////////////////////////////////////////////
 .footer{
@@ -166,4 +177,64 @@ label{
 .icon{
   height: 50px;
   margin: 10px;
+}
+//////////////////////////////////////////////////////////////hamburger/////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////780///////////////////////////////////////////
+
+@media (max-width: 1050px) {
+.main-nav-toggle {
+    width: 80px;
+    height: 80px;
+    border: none;
+    background: none;
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+    }
+  }
+  .Nav{
+    color: white;
+    font-weight: 600;
+  }
+  .NavHeader{
+    margin-top: 50px;
+  }
+  .main-nav-list {
+    z-index:1;
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100vh;
+    background-color: #172235;
+    //background-color: grey;
+    display: inline-block;
+   }
+  .main-nav-list li {
+    padding: 20px;
+  }
+  .main-nav-list.show {
+    -webkit-transform: translate(100%);
+    transform: translate(100%);
+    -webkit-transition: 0.5s -webkit-transform;
+    transition: 0.5s -webkit-transform;
+    transition: 0.5s transform;
+    transition: 0.5s transform, 0.5s -webkit-transform;
+  }
+  .recipes {
+    padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
 }

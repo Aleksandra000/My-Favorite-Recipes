@@ -5,7 +5,8 @@ import React from 'react';
             return (
                 <div className="background">
                     <h1>Contact</h1>
-                    <p>if you have a question or an interesting idea for a recipe - feel free to write to me! </p>
+                    <p></p>
+                    <p>If you have a question or an interesting idea for a recipe - feel free to write to me! </p>
                     <p>favorite_recipes@recipes.com</p>
                 </div>
             )}

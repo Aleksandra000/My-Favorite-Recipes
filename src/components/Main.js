@@ -8,6 +8,8 @@ class Main extends React.Component{
             <p className="p-main">My Favorite Recipes is the largest online destination to feature chef recipes, full shows, tons of expert cooking tips,
                 the latest food news and endless entertainment.
                 We have thousands of recipes you can rate, save to your Favorite Recipe Box — you can even share your own recipes!</p>
+            <p></p><br/>
+            <p></p>
             <div><img className="rounded img-main" src="./image/churros.jpg" alt="food"/></div>
         </div>
     )}

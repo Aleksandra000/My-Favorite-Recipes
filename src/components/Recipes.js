@@ -7,7 +7,7 @@ class Recipes extends Component {
             recipes: [],
             favorites: [],
             ingeredient:[],
-            checkboxChecked: false
+            //checkboxChecked: false
         };
     }
 
@@ -28,10 +28,10 @@ class Recipes extends Component {
         console.log(this.state.ingeredient);
     };
     getRecipe = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         this.setState({
             ingeredient:[...this.state.ingeredient,e.target.value],
-            checkboxChecked: !this.state.checkboxChecked
+            //checkboxChecked: !!this.state.checkboxChecked
         });
     };
 
@@ -56,11 +56,11 @@ class Recipes extends Component {
         });
     };
 
-    changeBox = e => {
-        this.setState({
-            checkboxChecked: true
-        });
-    };
+    // changeBox = e => {
+    //     this.setState({
+    //         checkboxChecked: true
+    //     });
+    // };
 
 
     render() {
@@ -82,97 +82,100 @@ class Recipes extends Component {
                     <div className="row">
                         <div className="col-sm">
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="apple"
-                                       value="apple" checked={this.state.checkboxChecked}
-                                       onChange={this.getRecipe}/>
+                                <input
+                                       type="checkbox" id="apple"
+                                       value="apple"
+                                       //checked={this.state.checkboxChecked}
+                                       onChange={this.getRecipe}
+                                />
                                 <label htmlFor="apple"> apple</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="bean" value="bean"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="bean" value="bean"
+                                        onChange={this.getRecipe}/>
                                 <label htmlFor="bean"> bean</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="beetroot"
-                                       value="beetroot" checked={this.state.checkboxChecked}
+                                <input  type="checkbox" id="beetroot"
+                                       value="beetroot"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="beetroot"> beetroot</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="butter"
-                                       value="butter" checked={this.state.checkboxChecked}
+                                <input  type="checkbox" id="butter"
+                                       value="butter"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="butter"> butter</label>
                             </div>
                         </div>
                         <div className="col-sm">
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="carrot"
-                                       value="carrot" checked={this.state.checkboxChecked}
+                                <input type="checkbox" id="carrot"
+                                       value="carrot"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="carrot"> carrot</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="cheese"
-                                       value="cheese" checked={this.state.checkboxChecked}
+                                <input  type="checkbox" id="cheese"
+                                       value="cheese"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="cheese"> cheese</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="chicken"
-                                       value="chicken" checked={this.state.checkboxChecked}
+                                <input type="checkbox" id="chicken"
+                                       value="chicken"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="chicken"> chicken</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="coconut" value="coconut"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="coconut" value="coconut"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="coconut"> coconut</label>
                             </div>
                         </div>
                         <div className="col-sm">
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="courgette"
-                                       value="courgette" checked={this.state.checkboxChecked}
+                                <input  type="checkbox" id="courgette"
+                                       value="courgette"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="courgette"> courgette</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="egg" value="egg"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="egg" value="egg"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="egg"> egg</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="fish" value="fish"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="fish" value="fish"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="fish"> fish</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="milk" value="milk"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="milk" value="milk"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="milk"> milk</label>
                             </div>
                         </div>
                         <div className="col-sm">
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="paprika" value="paprika"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="paprika" value="paprika"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="paprika"> paprika</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="pasta" value="pasta"
-                                       checked={this.state.checkboxChecked} onChange={this.getRecipe}/>
+                                <input type="checkbox" id="pasta" value="pasta"
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="pasta"> pasta</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="potatoes"
-                                       value="potatoes" checked={this.state.checkboxChecked}
+                                <input type="checkbox" id="potatoes"
+                                       value="potatoes"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="potatoes"> potato</label>
                             </div>
                             <div>
-                                <input onClick={e => this.changeBox(e)} type="checkbox" id="tomato"
-                                       value="tomato" checked={this.state.checkboxChecked}
+                                <input type="checkbox" id="tomato"
+                                       value="tomato"
                                        onChange={this.getRecipe}/>
                                 <label htmlFor="tomato"> tomato</label>
                             </div>
@@ -185,7 +188,7 @@ class Recipes extends Component {
             {
                 this.state.recipes.map(
                     (item) => (
-                        <div className="row recipes">
+                        <div className="row recipes"  key={item.recipe.label}>
                             <div className="col-recipe-t">
                                 <img src={item.recipe.image} alt="danie"/>
                             </div>

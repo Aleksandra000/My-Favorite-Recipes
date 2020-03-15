@@ -11,15 +11,20 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
 const Navigation = ()=>(
-    <nav className="NavMenu">
+    <nav className="NavMenu main-nav">
         <header className="NavHeader">My Favorite Recipes</header>
-      <ul className="NavUl">
+      <ul className="NavUl main-nav-list" id="menu">
         <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} exact to="/" >Home</NavLink></li>
         <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/recipes/">Recipes</NavLink></li>
         <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/favorites">Favorites</NavLink></li>
         <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/articles">Articles</NavLink></li>
         <li><NavLink className="Nav" activeStyle={{fontWeight: "bold"}} to="/contact">Contact</NavLink></li>
       </ul>
+      <button className="main-nav-toggle" aria-label="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+      </button>
     </nav>
 );
 
