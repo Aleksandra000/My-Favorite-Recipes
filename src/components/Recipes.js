@@ -36,19 +36,19 @@ class Recipes extends Component {
         });
     };
 
-    // addToFav = label => {
-    //     let recipefav = this.state.recipes.map(item => {
-    //         return item
-    //     });
-    //     let recipefav2 = recipefav.filter(item => {
-    //         return item.recipe.label === label;
-    //     });
-    //     const myFavs = JSON.stringify(recipefav2);
-    //     localStorage.setItem("favorites", myFavs);
-    //     console.log(recipefav);
-    //     console.log(recipefav2);
-    //     console.log(myFavs);
-    // };
+    addToFav = label => {
+        let recipefav = this.state.recipes.map(item => {
+            return item
+        });
+        let recipefav2 = recipefav.filter(item => {
+            return item.recipe.label === label;
+        });
+        const myFavs = JSON.stringify(recipefav2);
+        localStorage.setItem("favorites", myFavs);
+        console.log(recipefav);
+        console.log(recipefav2);
+        console.log(myFavs);
+    };
     // addToFav = indexToAdd => {
     //
     //     let recipefav = this.state.recipes.map(item => {
