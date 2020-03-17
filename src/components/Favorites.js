@@ -9,8 +9,10 @@ class Favorites extends Component {
 
     componentDidMount() {
         const myFavs = JSON.parse(localStorage.getItem('favorites'));
+
+
         this.setState({
-            favorites: myFavs
+            favorites: myFavs.recipe
                     });
         console.log(myFavs)
     }
@@ -22,7 +24,7 @@ class Favorites extends Component {
                 <div>
                 {this.state.favorites.map(
                             (fav) => (
-                                    <div className="row recipes">
+                                    <div className="row recipes" key={fav.recipe.label}>
                                         <div className="col-recipe-t">
                                             <img src={fav.recipe.image} alt="danie"/>
                                         </div>

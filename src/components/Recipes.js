@@ -7,7 +7,8 @@ class Recipes extends Component {
             recipes: [],
             favorites: [],
             ingeredient:[],
-            //checkboxChecked: false
+            checked:false,
+            tempArr : [],
         };
     }
 
@@ -35,33 +36,56 @@ class Recipes extends Component {
         });
     };
 
-    addToFav = label => {
-        let recipefav = this.state.recipes.map(item => {
-            return item
-        });
-        let recipefav2 = recipefav.filter(item => {
-            return item.recipe.label === label;
-        });
-        const myFavs = JSON.stringify(recipefav2);
-        localStorage.setItem("favorites", myFavs);
-        console.log(recipefav);
-        console.log(recipefav2);
-        console.log(myFavs);
-    };
-
+    // addToFav = label => {
+    //     let recipefav = this.state.recipes.map(item => {
+    //         return item
+    //     });
+    //     let recipefav2 = recipefav.filter(item => {
+    //         return item.recipe.label === label;
+    //     });
+    //     const myFavs = JSON.stringify(recipefav2);
+    //     localStorage.setItem("favorites", myFavs);
+    //     console.log(recipefav);
+    //     console.log(recipefav2);
+    //     console.log(myFavs);
+    // };
+    // addToFav = indexToAdd => {
+    //
+    //     let recipefav = this.state.recipes.map(item => {
+    //                 return item
+    //             });
+    //     let recipefav3 = recipefav.filter(
+    //         (item, index) => index === indexToAdd
+    //     );
+    //
+    //     let myFavs = JSON.stringify(recipefav3);
+    //     localStorage.setItem("favorites", myFavs);
+    //
+    //     console.log(recipefav3);
+    // };
+    // addToFav = label => {
+    //     let recipefav = this.state.recipes.map(item => {
+    //         return item
+    //     });
+    //     let recipefav2 = recipefav.filter(item => {
+    //         return item.recipe.label === label;
+    //     });
+    //     this.setState({
+    //         tempArr:[...this.state.tempArr,recipefav2]
+    //     });
+    //     let recipefav3=this.state.tempArr;
+    //     const myFavs = JSON.stringify(recipefav3);
+    //     localStorage.setItem("favorites", myFavs);
+    //
+    //     console.log(myFavs);
+    // };
 
     delete = () => {
         this.setState({
-            ingeredient:[]
+            ingeredient:[],
+            checked:false
         });
     };
-
-    // changeBox = e => {
-    //     this.setState({
-    //         checkboxChecked: true
-    //     });
-    // };
-
 
     render() {
         return (
@@ -187,8 +211,8 @@ class Recipes extends Component {
         <div>
             {
                 this.state.recipes.map(
-                    (item) => (
-                        <div className="row recipes"  key={item.recipe.label}>
+                    (item,index) => (
+                        <div className="row recipes"  key={index}>
                             <div className="col-recipe-t">
                                 <img src={item.recipe.image} alt="danie"/>
                             </div>
