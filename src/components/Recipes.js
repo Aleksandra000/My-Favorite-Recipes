@@ -37,17 +37,34 @@ class Recipes extends Component {
     };
 
     addToFav = label => {
+        console.log(label);
+
+        let favsArr = [];
+
+        if (localStorage.getItem('favorites') !== null) {
+            let tempLocalStorage = JSON.parse(localStorage.getItem('favorites'));
+            favsArr = [...tempLocalStorage, label];
+        } else {
+            favsArr.push(label);
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favsArr));
+        console.log('dodano!');
+
+
+
         let recipefav = this.state.recipes.map(item => {
             return item
         });
         let recipefav2 = recipefav.filter(item => {
             return item.recipe.label === label;
         });
-        const myFavs = JSON.stringify(recipefav2);
-        localStorage.setItem("favorites", myFavs);
-        console.log(recipefav);
-        console.log(recipefav2);
-        console.log(myFavs);
+        // const myFavs = JSON.stringify(recipefav2);
+        // localStorage.setItem("favorites", myFavs);
+        // console.log(recipefav);
+        // console.log(recipefav2);
+        // console.log(myFavs);
+
     };
     // addToFav = indexToAdd => {
     //
@@ -94,41 +111,41 @@ class Recipes extends Component {
                     <div className="col">
                         Type ingredients:
                         <input type="text" value={this.state.ingeredient} onChange={this.getRecipeSubmit}/>
-                            <button type="button" className="btn btn-success" onClick={this.getRecipeSubmit}>Select</button>
+                        <button type="button" className="btn btn-success" onClick={this.getRecipeSubmit}>Select</button>
                     </div>
                     <div className="col right-side">
                         <button type="button" className="btn btn-success" onClick={this.delete}>Clear all</button>
                     </div>
                 </div>
-            <div>
-                {/*<form>*/}
+                <div>
+                    {/*<form>*/}
                     <p>Or choose ingredients:</p>
                     <div className="row">
                         <div className="col-sm">
                             <div>
                                 <input
-                                       type="checkbox" id="apple"
-                                       value="apple"
-                                       //checked={this.state.checkboxChecked}
-                                       onChange={this.getRecipe}
+                                    type="checkbox" id="apple"
+                                    value="apple"
+                                    //checked={this.state.checkboxChecked}
+                                    onChange={this.getRecipe}
                                 />
                                 <label htmlFor="apple"> apple</label>
                             </div>
                             <div>
                                 <input type="checkbox" id="bean" value="bean"
-                                        onChange={this.getRecipe}/>
+                                       onChange={this.getRecipe}/>
                                 <label htmlFor="bean"> bean</label>
                             </div>
                             <div>
                                 <input  type="checkbox" id="beetroot"
-                                       value="beetroot"
-                                       onChange={this.getRecipe}/>
+                                        value="beetroot"
+                                        onChange={this.getRecipe}/>
                                 <label htmlFor="beetroot"> beetroot</label>
                             </div>
                             <div>
                                 <input  type="checkbox" id="butter"
-                                       value="butter"
-                                       onChange={this.getRecipe}/>
+                                        value="butter"
+                                        onChange={this.getRecipe}/>
                                 <label htmlFor="butter"> butter</label>
                             </div>
                         </div>
@@ -141,8 +158,8 @@ class Recipes extends Component {
                             </div>
                             <div>
                                 <input  type="checkbox" id="cheese"
-                                       value="cheese"
-                                       onChange={this.getRecipe}/>
+                                        value="cheese"
+                                        onChange={this.getRecipe}/>
                                 <label htmlFor="cheese"> cheese</label>
                             </div>
                             <div>
@@ -160,8 +177,8 @@ class Recipes extends Component {
                         <div className="col-sm">
                             <div>
                                 <input  type="checkbox" id="courgette"
-                                       value="courgette"
-                                       onChange={this.getRecipe}/>
+                                        value="courgette"
+                                        onChange={this.getRecipe}/>
                                 <label htmlFor="courgette"> courgette</label>
                             </div>
                             <div>
@@ -205,28 +222,28 @@ class Recipes extends Component {
                             </div>
                         </div>
                     </div>
-                {/*</form>  */}
-        </div>
+                    {/*</form>  */}
+                </div>
 
-        <div>
-            {
-                this.state.recipes.map(
-                    (item,index) => (
-                        <div className="row recipes"  key={index}>
-                            <div className="col-recipe-t">
-                                <img src={item.recipe.image} alt="danie"/>
-                            </div>
-                            <div className="col-recipe-w">
-                                <h2 >{item.recipe.label}   <button type="button" className="btn btn-success" onClick={() => this.addToFav(item.recipe.label)} >❤ </button> </h2>
-                                <h3 >Ingredients: {item.recipe.ingredientLines}  </h3>
-                                <a className="btn btn-success" href={item.recipe.url}>See how to make it!</a>
-                            </div>
-                        </div>
-            ))}
-       </div>
+                <div>
+                    {
+                        this.state.recipes.map(
+                            (item,index) => (
+                                <div className="row recipes"  key={index}>
+                                    <div className="col-recipe-t">
+                                        <img src={item.recipe.image} alt="danie"/>
+                                    </div>
+                                    <div className="col-recipe-w">
+                                        <h2 >{item.recipe.label}   <button type="button" className="btn btn-success" onClick={() => this.addToFav(item)} >❤ </button> </h2>
+                                        <h3 >Ingredients: {item.recipe.ingredientLines}  </h3>
+                                        <a className="btn btn-success" href={item.recipe.url}>See how to make it!</a>
+                                    </div>
+                                </div>
+                            ))}
+                </div>
 
-    </div>
-    );
-}
+            </div>
+        );
+    }
 }
 export default Recipes;
