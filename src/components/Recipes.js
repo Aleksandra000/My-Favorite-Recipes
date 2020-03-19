@@ -52,7 +52,6 @@ class Recipes extends Component {
         console.log('dodano!');
 
 
-
         let recipefav = this.state.recipes.map(item => {
             return item
         });
@@ -66,36 +65,7 @@ class Recipes extends Component {
         // console.log(myFavs);
 
     };
-    // addToFav = indexToAdd => {
-    //
-    //     let recipefav = this.state.recipes.map(item => {
-    //                 return item
-    //             });
-    //     let recipefav3 = recipefav.filter(
-    //         (item, index) => index === indexToAdd
-    //     );
-    //
-    //     let myFavs = JSON.stringify(recipefav3);
-    //     localStorage.setItem("favorites", myFavs);
-    //
-    //     console.log(recipefav3);
-    // };
-    // addToFav = label => {
-    //     let recipefav = this.state.recipes.map(item => {
-    //         return item
-    //     });
-    //     let recipefav2 = recipefav.filter(item => {
-    //         return item.recipe.label === label;
-    //     });
-    //     this.setState({
-    //         tempArr:[...this.state.tempArr,recipefav2]
-    //     });
-    //     let recipefav3=this.state.tempArr;
-    //     const myFavs = JSON.stringify(recipefav3);
-    //     localStorage.setItem("favorites", myFavs);
-    //
-    //     console.log(myFavs);
-    // };
+
 
     delete = () => {
         this.setState({
