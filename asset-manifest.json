@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/My-Favorite-Recipes/static/css/main.f7ab3387.chunk.css",
+    "main.js": "/My-Favorite-Recipes/static/js/main.a5034d60.chunk.js",
+    "main.js.map": "/My-Favorite-Recipes/static/js/main.a5034d60.chunk.js.map",
+    "runtime-main.js": "/My-Favorite-Recipes/static/js/runtime-main.76a4f395.js",
+    "runtime-main.js.map": "/My-Favorite-Recipes/static/js/runtime-main.76a4f395.js.map",
+    "static/css/2.67123b20.chunk.css": "/My-Favorite-Recipes/static/css/2.67123b20.chunk.css",
+    "static/js/2.827bfc1e.chunk.js": "/My-Favorite-Recipes/static/js/2.827bfc1e.chunk.js",
+    "static/js/2.827bfc1e.chunk.js.map": "/My-Favorite-Recipes/static/js/2.827bfc1e.chunk.js.map",
+    "index.html": "/My-Favorite-Recipes/index.html",
+    "precache-manifest.aaf9a0828029425bd73a9c2a9913055f.js": "/My-Favorite-Recipes/precache-manifest.aaf9a0828029425bd73a9c2a9913055f.js",
+    "service-worker.js": "/My-Favorite-Recipes/service-worker.js",
+    "static/css/2.67123b20.chunk.css.map": "/My-Favorite-Recipes/static/css/2.67123b20.chunk.css.map",
+    "static/css/main.f7ab3387.chunk.css.map": "/My-Favorite-Recipes/static/css/main.f7ab3387.chunk.css.map",
+    "static/js/2.827bfc1e.chunk.js.LICENSE.txt": "/My-Favorite-Recipes/static/js/2.827bfc1e.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/My-Favorite-Recipes/static/media/food.d09280ed.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76a4f395.js",
+    "static/css/2.67123b20.chunk.css",
+    "static/js/2.827bfc1e.chunk.js",
+    "static/css/main.f7ab3387.chunk.css",
+    "static/js/main.a5034d60.chunk.js"
+  ]
+}
