@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "homepage": "https://aleksandra000.github.io/My-Favorite-Recipes/"
 }
